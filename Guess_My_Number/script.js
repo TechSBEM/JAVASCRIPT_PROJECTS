@@ -26,8 +26,10 @@ const displayMessage = function(message) {
     
 }
 
-// -----WORKING ON THE CLICK HANDLER------
-document.querySelector('.check').addEventListener('click', function () {
+
+
+// -----FUNCTION FOR THE CHECK BUTTOM------
+const checkBox =function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
@@ -49,20 +51,23 @@ document.querySelector('.check').addEventListener('click', function () {
   }else if(guess !== secreteNumber){
 
     if (score > 1) {
-        displayMessage(guess > secreteNumber? "📈Number is too high" : '📉Number is too low')
+        displayMessage(guess > secreteNumber? "📈Number is too high" : '📉Number is too loo')
         // document.querySelector('.message').textContent =guess > secreteNumber? "📈Number is too high" : '📉Number is too loo';
         score--;
-        document.querySelectobr('.score').textContent = score;
+        document.querySelector('.score').textContent = score;
       } else {
         document.querySelector('.message').textContent = ' You Lost The Game';
         document.querySelector('.score').textContent = 0;
       }
   }
   
-});
-    
+}
 
-document.querySelector('.again').addEventListener('click', function () {
+// -----WORKING ON THE CLICK HANDLER------
+document.querySelector('.check').addEventListener('click', checkBox );
+    
+// ------RESETTING THE BUTTOM------
+const reset =  function () {
   score = 20;
   secreteNumber = Math.trunc(Math.random() * 20) + 1;
 
@@ -72,7 +77,32 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.number').textContent = '?';
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.backgroundColor = '15rem';
-});
+}
+
+
+
+document.querySelector('.again').addEventListener('click', reset);
+
+
+// ----Using the Enter key to check the buttom-----
+document.addEventListener("keydown", function (e) {
+  console.log(e);
+  if(e.key==="Enter" && document.querySelector(".check")){
+    checkBox()
+  }
+
+})
+
+
+
+// ----Using the Escape key to check the Again buttom-----
+document.addEventListener("keydown", function (e) {
+  console.log(e);
+  if(e.key==="Escape" && document.querySelector(".again")){
+    reset()
+  }
+
+})
 
 
 
