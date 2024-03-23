@@ -49,7 +49,7 @@ document.querySelector('.check').addEventListener('click', function () {
   }else if(guess !== secreteNumber){
 
     if (score > 1) {
-        displayMessage(guess > secreteNumber? "📈Number is too high" : '📉Number is too loo')
+        displayMessage(guess > secreteNumber? "📈Number is too high" : '📉Number is too low')
         // document.querySelector('.message').textContent =guess > secreteNumber? "📈Number is too high" : '📉Number is too loo';
         score--;
         document.querySelectobr('.score').textContent = score;
