@@ -170,3 +170,58 @@ main {
 .hidden {
   display: none;
 }
+
+
+
+@media screen and (max-width: 760px) {
+  main{
+    width: auto;
+    height: 50rem;
+  }
+
+  .player{
+    padding: 5rem;
+  }
+
+  .name {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  .score {
+    font-size: 4rem;
+    font-weight: 300;
+  }
+ 
+  
+  .current {
+   
+    border-radius: 9px;
+    width: auto;
+    padding: 1rem;
+  }
+  
+  .current-label {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .current-score {
+    font-size: 1.76rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.35rem 1.25rem; 
+  }
+  
+  
+  .btn--new {
+    top: 8rem;
+  }
+
+  .dice {
+    height: 7rem;
+  }
+
+}
