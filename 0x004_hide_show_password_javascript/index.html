@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="input-box">
+      <!-- By defalut, type password is"hidden" -->
+      <input type="password" placeholder="password" id="password" />
+      <img src="./eye-icons/eye-close.png" alt="eye-icon" id="eyeIcon" />
+      <!-- <img src="./eye-icons/eye-open.png alt="eye-icon" id="eyeIcon" /> -->
+    </div>
+
+    <script>
+        let eyeIcon= document.getElementById("eyeIcon");
+        let password= document.getElementById("password");
+
+        eyeIcon.onclick = function (){
+            // Checking if the ID has a type of password in the html
+            if(password.type =="password"){
+                // If true, change it to text for visibility
+                password.type ="text";
+                eyeIcon.src="./eye-icons/eye-open.png";
+            }else {
+                password.type = "password";
+                eyeIcon.src="./eye-icons/eye-close.png";
+            }
+        }
+
+    </script>
+  </body>
+</html>
